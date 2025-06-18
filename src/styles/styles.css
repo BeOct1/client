@@ -1,0 +1,146 @@
+.navbar {
+    display: flex;
+    gap: 1rem;
+    background: #222;
+    color: #fff;
+    padding: 1rem;
+  }
+  
+  .navbar a, .navbar button {
+    color: #fff;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navbar a:hover, .navbar button:hover {
+    text-decoration: underline;
+  }
+  
+  .movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .movie-card {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 6px;
+  }
+  
+  .movie-card h3 {
+    margin: 0 0 0.5rem;
+  }
+  .navbar {
+      display: flex;
+      gap: 1rem;
+      background: #222;
+      color: #fff;
+      padding: 1rem;
+  }
+
+  .navbar a,
+  .navbar button {
+      color: #fff;
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+  }
+
+  .navbar a:hover,
+  .navbar button:hover {
+      text-decoration: underline;
+  }
+
+  .movie-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+  }
+
+  .movie-card {
+      background: #f5f5f5;
+      padding: 1rem;
+      border-radius: 6px;
+  }
+
+  .movie-card h3 {
+      margin: 0 0 0.5rem;
+  }
+
+  /* Movie Card Styling */
+  .movie-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+  }
+
+  .movie-card {
+      background: white;
+      padding: 0.5rem;
+      border-radius: 5px;
+      text-align: center;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .movie-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+  }
+
+  .movie-card h3 {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+  }
+
+  .page-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 1rem;
+  }
+
+  .search-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin: 1rem 0;
+  }
+
+  .search-bar input {
+      flex: 1;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+  }
+
+  .search-bar button {
+      background: #222;
+      color: white;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+    .search-bar button:hover {
+        background: #333;
+    }
+    .search-bar input {
+        flex: 1;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+}
+.search-bar button {
+    background: #222;
+    color: white;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}   
