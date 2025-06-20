@@ -1,9 +1,9 @@
-
+// src/api.js
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://your-backend.onrender.com/api',
+  baseURL: 'https://betmora-backend.onrender.com/api',
   withCredentials: true,
 });
 
-export default API; 
+export default API;

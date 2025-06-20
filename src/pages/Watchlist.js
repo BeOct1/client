@@ -1,36 +1,29 @@
-// src/pages/Watchlist.js
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useAuth } from '../context/AuthContext';
+import API from '../api';
 import MovieCard from '../components/MovieCard';
 import '../styles/styles.css';
 
 const Watchlist = () => {
-    const { token } = useAuth();
-    const [watchlist, setWatchlist] = useState([]);
+    const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const fetchWatchlist = async () => {
         try {
-            const res = await axios.get('/api/watchlist', {
-                headers: { Authorization: `Bearer ${token}` }
-            });
-            setWatchlist(res.data);
+            const res = await API.get('/watchlist');
+            setMovies(res.data);
         } catch (err) {
-            console.error('Watchlist error:', err);
+            alert('Failed to fetch watchlist');
         } finally {
             setLoading(false);
         }
     };
 
-    const removeMovie = async (movieId) => {
+    const handleRemove = async (id) => {
         try {
-            await axios.delete(`/api/watchlist/${movieId}`, {
-                headers: { Authorization: `Bearer ${token}` }
-            });
-            setWatchlist(watchlist.filter((m) => m.tmdbId !== movieId));
+            await API.delete(`/watchlist/${id}`);
+            setMovies(prev => prev.filter(m => m.id !== id));
         } catch (err) {
-            alert('Error removing movie');
+            alert('Could not remove movie');
         }
     };
 
@@ -43,17 +36,10 @@ const Watchlist = () => {
             <h2>My Watchlist</h2>
             {loading ? (
                 <p>Loading...</p>
-            ) : watchlist.length === 0 ? (
-                <p>Your watchlist is empty.</p>
             ) : (
                 <div className="movie-grid">
-                    {watchlist.map((movie) => (
-                        <MovieCard
-                            key={movie.tmdbId}
-                            movie={movie}
-                            onRemove={() => removeMovie(movie.tmdbId)}
-                            showRemoveButton
-                        />
+                    {movies.length === 0 ? <p>Watchlist is empty.</p> : movies.map(movie => (
+                        <MovieCard key={movie.id} movie={movie} onAction={() => handleRemove(movie.id)} actionLabel="Remove" />
                     ))}
                 </div>
             )}

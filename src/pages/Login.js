@@ -1,44 +1,31 @@
-
 import React, { useState } from 'react';
-import axios from 'axios';
-import API from '../api';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import '../styles/styles.css';
 
-function Login() {
-  const [formData, setFormData] = useState({ email: '', password: '' });
+const Login = () => {
+  const { login, loading } = useAuth();
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('/api/auth/login', formData, { withCredentials: true });
-    navigate('/watchlist'); // Redirect after login
+    if (!email || !password) return alert('All fields are required');
+    await login(email, password);
+    navigate('/dashboard');
   };
 
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="form-container">
+      <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={(e) =>
-            setFormData({ ...formData, password: e.target.value })
-          }
-          required
-        />
-        <button type="submit">Login</button>
+        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <button type="submit" disabled={loading}>{loading ? 'Logging in...' : 'Login'}</button>
       </form>
     </div>
   );
-}
+};
 
 export default Login;
