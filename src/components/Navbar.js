@@ -17,7 +17,7 @@ function Navbar() {
 
     return (
         <nav className="navbar">
-            <Link to="/dashboard" className="nav-link">Home</Link>
+            <Link to="/home" className="nav-link">Home</Link>
             {user && (
                 <>
                     <Link to="/search" className="nav-link">Search</Link>

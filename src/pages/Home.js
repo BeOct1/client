@@ -7,7 +7,7 @@ const Home = () => {
   const { user, logout } = useAuth();
 
   return (
-    <div className="dashboard-container">
+    <div className="home-container">
       <nav className="navbar">
         <div className="nav-links">
           <Link to="/home">Home</Link>
@@ -20,7 +20,7 @@ const Home = () => {
         </div>
       </nav>
 
-      <div className="dashboard-content">
+      <div className="home-content">
         <h1>🎬 Welcome to BeTech Movie Recommendation App-Betmora, {user?.name}!</h1>
         <p>Discover and manage your favorite movies.</p>
       </div>

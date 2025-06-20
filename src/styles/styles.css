@@ -6,7 +6,7 @@ body {
 }
 
 /* Home Page */
-.dashboard-container {
+.home-container {
     min-height: 100vh;
     background-image: url('/theatre-room.jpg');
     background-size: cover;
@@ -81,11 +81,11 @@ body {
     padding: 1.5rem;
 }
 
-.dashboard-container {
+.home-container {
     min-height: 100vh;
 }
 
-.dashboard-content {
+.home-content {
     padding: 2rem;
     text-align: center;
 }

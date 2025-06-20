@@ -1,6 +1,6 @@
 // src/App.js
 import React from 'react';
-import { AuthProvider, AuthContext } from './context/AuthContext';
+import { AuthProvider, useAuth } from './context/AuthContext';
 import AppRouter from './AppRouter';
 
 function Dashboard() {
@@ -8,7 +8,7 @@ function Dashboard() {
 }
 
 function PrivateRoute({ children }) {
-  const { user } = React.useContext(AuthContext);
+  const { user } = useAuth();
   return user ? children : <Navigate to="/login" />;
 }
 
