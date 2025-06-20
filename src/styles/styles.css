@@ -5,6 +5,15 @@ body {
     background: #f5f5f5;
 }
 
+/* Home Page */
+.dashboard-container {
+    min-height: 100vh;
+    background-image: url('/theatre-room.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 /* Navbar */
 .navbar {
     background: #222;
@@ -60,6 +69,11 @@ body {
     color: white;
     font-weight: bold;
     cursor: pointer;
+}
+
+/* Register Page */
+.form-container.register {
+    background-image: url('/image 4.jpg');
 }
 
 /* Page Layouts */
@@ -170,4 +184,32 @@ body {
         width: 90%;
         margin: 1rem auto;
     }
+}
+
+/* Login Page */
+.form-container {
+    background-image: url('/image 3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.2);
+    color: #fff;
+}
+
+/* Search Page */
+.page-container.search {
+    background-image: url('/image2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+/* Watchlist Page */
+.page-container.watchlist {
+    background-image: url('/image5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }

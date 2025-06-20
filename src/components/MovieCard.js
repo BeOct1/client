@@ -10,9 +10,9 @@ const MovieCard = ({ movie, onAction, actionLabel }) => {
                 className="movie-poster"
             />
             <div className="movie-details">
-                <h3>{movie.title}</h3>
-                <p>Rating: {movie.vote_average}</p>
-                <p>Release: {movie.release_date}</p>
+                <h3 className="movie-title">{movie.title}</h3>
+                <p className="movie-rating">Rating: {movie.vote_average}</p>
+                <p className="movie-release">Release: {movie.release_date}</p>
                 {onAction && (
                     <button onClick={() => onAction(movie)} className="movie-action-btn">
                         {actionLabel}

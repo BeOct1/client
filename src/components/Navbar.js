@@ -17,18 +17,18 @@ function Navbar() {
 
     return (
         <nav className="navbar">
-            <Link to="/dashboard">Home</Link>
+            <Link to="/dashboard" className="nav-link">Home</Link>
             {user && (
                 <>
-                    <Link to="/search">Search</Link>
-                    <Link to="/watchlist">Watchlist</Link>
-                    <button onClick={handleLogout}>Logout</button>
+                    <Link to="/search" className="nav-link">Search</Link>
+                    <Link to="/watchlist" className="nav-link">Watchlist</Link>
+                    <button onClick={handleLogout} className="nav-logout-btn">Logout</button>
                 </>
             )}
             {!user && (
                 <>
-                    <Link to="/login">Login</Link>
-                    <Link to="/register">Register</Link>
+                    <Link to="/login" className="nav-link">Login</Link>
+                    <Link to="/register" className="nav-link">Register</Link>
                 </>
             )}
         </nav>
